@@ -141,4 +141,4 @@ function clean() {
 task('build', series(clean, 'default'));
 
 // Watch
-task('watch', parallel('default', parallel(browser_sync,  gulp_watch)));
+task('watch', series(clean, 'default', parallel(browser_sync,  gulp_watch)));
